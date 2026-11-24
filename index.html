@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sahra (سهرة) — Your Cairo night, planned in 30 seconds</title>
+<meta name="description" content="Sahra builds you a full Cairo night out: dinner, the main stop, and a late finish, matched to your vibe, area and budget.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top"><span class="brand-ar">سهرة</span><span class="brand-en">Sahra</span></a>
+    <div class="nav-links">
+      <a href="#planner">Planner</a>
+      <a href="#tonight">Tonight</a>
+      <a href="#how">How it works</a>
+    </div>
+    <div class="clock-chip" id="clockChip" title="Live Cairo time">
+      <span class="clock-dot"></span><span id="clock">Cairo --:--:--</span>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="hero-inner">
+    <p class="kicker">خطط سهرتك في ٣٠ ثانية</p>
+    <h1>Your Cairo night,<br>planned in <span class="grad">30 seconds</span>.</h1>
+    <p class="sub">Sahra builds you a full night out: dinner, the main stop, and a late finish. Matched to your vibe, your area, and your budget.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#planner">Plan my night</a>
+      <a class="btn btn-ghost" href="#tonight">See tonight's picks</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong id="statVenues">0</strong><span>spots curated</span></div>
+      <div><strong>6</strong><span>areas covered</span></div>
+      <div><strong>30s</strong><span>to a full plan</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="section" id="planner">
+  <h2 class="section-title">The Planner</h2>
+  <p class="section-sub">Three questions. One solid night.</p>
+
+  <div class="planner-card">
+    <div class="field">
+      <label for="vibe">Tonight's vibe</label>
+      <select id="vibe">
+        <option value="chill">Chill</option>
+        <option value="foodie">Foodie</option>
+        <option value="fancy">Fancy</option>
+        <option value="chaos">Full chaos</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="area">Area</label>
+      <select id="area">
+        <option value="any">Surprise me</option>
+        <option value="Zamalek">Zamalek</option>
+        <option value="Maadi">Maadi</option>
+        <option value="Downtown">Downtown</option>
+        <option value="New Cairo">New Cairo</option>
+        <option value="Heliopolis">Heliopolis</option>
+        <option value="Sheikh Zayed">Sheikh Zayed</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="budget">Budget for two</label>
+      <select id="budget">
+        <option value="low">Under 300 EGP</option>
+        <option value="mid" selected>Around 600 EGP</option>
+        <option value="high">Sky is the limit</option>
+      </select>
+    </div>
+    <button class="btn btn-primary btn-plan" id="planBtn">Build my plan ✨</button>
+  </div>
+
+  <div class="result" id="result" hidden>
+    <div class="result-head">
+      <h3 id="resultTitle">Your night</h3>
+      <span class="total" id="resultTotal"></span>
+    </div>
+    <ol class="stops" id="stops"></ol>
+    <div class="result-actions">
+      <button class="btn btn-ghost" id="shuffleBtn">🔀 Shuffle</button>
+      <button class="btn btn-ghost" id="copyBtn">📋 Copy plan</button>
+      <button class="btn btn-whatsapp" id="waBtn">Send to WhatsApp</button>
+    </div>
+    <p class="copied" id="copiedMsg" hidden>Copied to clipboard ✅</p>
+  </div>
+</section>
+
+<section class="section" id="tonight">
+  <h2 class="section-title">Tonight's picks</h2>
+  <p class="section-sub">A few spots we're feeling right now. Badges update with Cairo time.</p>
+  <div class="picks" id="picks"></div>
+</section>
+
+<section class="section" id="how">
+  <h2 class="section-title">How it works</h2>
+  <div class="steps">
+    <div class="step">
+      <span class="step-num">1</span>
+      <h4>Pick a vibe</h4>
+      <p>Chill, foodie, fancy, or full chaos. Sahra reads the mood, not just the map.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">2</span>
+      <h4>Get a 3-stop plan</h4>
+      <p>Dinner around 8, the main stop at 10:30, and a late finish after midnight.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">3</span>
+      <h4>Send it to the group</h4>
+      <p>One tap copies the plan or drops it straight into WhatsApp. Sahlah keda.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="brand"><span class="brand-ar">سهرة</span><span class="brand-en">Sahra</span></div>
+    <p>Built in one night in Cairo. All venues are fictional demo data, so don't show up anywhere expecting koshari.</p>
+    <p class="muted">Made with ☕ and very little sleep · <span id="year"></span></p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
